@@ -4,12 +4,15 @@
   "description": "A read-only slack client.",
   "main": "main.js",
   "scripts": {
-      "start": "electron ."
-  }
+    "start": "electron ."
+  },
   "repository": {
     "url": "https://github.com/robdrimmie/abide",
     "type": "git"
   },
   "author": "Rob Drimmie <rob@drimmie.net>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "nconf": "^0.8.4"
+  }
 }
