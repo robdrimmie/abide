@@ -13,6 +13,7 @@
   "author": "Rob Drimmie <rob@drimmie.net>",
   "license": "MIT",
   "dependencies": {
-    "nconf": "^0.8.4"
+    "nconf": "^0.8.4",
+    "node-fetch": "^1.6.3"
   }
 }
