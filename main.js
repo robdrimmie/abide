@@ -1,24 +1,22 @@
 const {app, BrowserWindow} = require('electron');
 const nconf = require('nconf');
-const fetch = require('node-fetch');
-const slack = require('./lib/slack');
+const Slack = require('./lib/slack');
 
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let win;
 
+function bootstrap() {
+    createWindow();
+}
+
 function createWindow () {
   // this configuration setup needs to be somewhere better
   nconf.file('./config.json');
-  let token = nconf.get('slack')['token'];
-  let foo = fetch('https://slack.com/api/auth.test?token=' + 'xoxp-13569967601-13570969090-99391631664-1bc7735d1feca8b77b8eb5e1900b248a')
-    .then((foo) => {
-        return foo.json();
-    }).then(function(json) {
-        console.log(json);
-    });
 
 
+  let bar = new Slack(nconf);
+  bar.do();
 
   // Create the browser window.
   win = new BrowserWindow({width: 800, height: 600});
@@ -42,7 +40,7 @@ function createWindow () {
 // This method will be called when Electron has finished
 // initialization and is ready to create browser windows.
 // Some APIs can only be used after this event occurs.
-app.on('ready', createWindow);
+app.on('ready', bootstrap);
 
 // Quit when all windows are closed.
 app.on('window-all-closed', () => {
