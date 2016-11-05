@@ -7,17 +7,22 @@ const Slack = require('./lib/slack');
 let win;
 
 function bootstrap() {
-    createWindow();
+    playWithSlack();
+    //createWindow();
 }
 
+function playWithSlack() {
+    nconf.file('./config.json');
+
+    let slack = new Slack(nconf);
+    slack.teamInfo()
+    .then((foo) => {
+        console.log(foo);
+    });
+}
+
+
 function createWindow () {
-  // this configuration setup needs to be somewhere better
-  nconf.file('./config.json');
-
-
-  let bar = new Slack(nconf);
-  bar.do();
-
   // Create the browser window.
   win = new BrowserWindow({width: 800, height: 600});
 
