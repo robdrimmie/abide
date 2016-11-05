@@ -13,7 +13,10 @@
   "author": "Rob Drimmie <rob@drimmie.net>",
   "license": "MIT",
   "dependencies": {
+    "bufferutil": "^1.2.1",
     "nconf": "^0.8.4",
-    "node-fetch": "^1.6.3"
+    "node-fetch": "^1.6.3",
+    "utf-8-validate": "^1.2.1",
+    "websocket": "^1.0.23"
   }
 }
