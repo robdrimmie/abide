@@ -15,12 +15,13 @@ function playWithSlack() {
     nconf.file('./config.json');
 
     let slack = new Slack(nconf);
-    slack.teamInfo()
-    .then((foo) => {
-        console.log(foo);
-    });
-}
+    slack.listen();
+    // slack.teamInfo()
+    // .then((foo) => {
+    //     console.log(foo);
+    // });
 
+}
 
 function createWindow () {
   // Create the browser window.
