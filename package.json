@@ -10,6 +10,7 @@
   "author": "rmdrimmie <rob.drimmie@gmail.com>",
   "license": "MIT",
   "dependencies": {
-    "nconf": "^0.8.4"
+    "nconf": "^0.8.4",
+    "slack": "^8.1.0"
   }
 }
