@@ -9,6 +9,10 @@ const BrowserWindow = electron.BrowserWindow;
 const Menu = electron.Menu;
 const crashReporter = electron.crashReporter;
 const shell = electron.shell;
+
+// const config = require('nconf');
+// config.file('./config.json');
+
 let menu;
 let template;
 let mainWindow = null;
