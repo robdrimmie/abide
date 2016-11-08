@@ -1,0 +1,5 @@
+{
+    "slack": {
+        "token":"create a token at slack, store it here"
+    }
+}
