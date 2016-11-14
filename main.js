@@ -7,7 +7,7 @@ const slack = require('slack');
 nconf.file('./config.json');
 
 let bot = slack.rtm.client();
-let token = nconf.get("slack:token");
+
 
 let teams = [];
 let channels = [];
@@ -150,4 +150,7 @@ bot.message(message=> {
   });
 })
 
+// Start it up!
+
+let tokens = nconf.get("slack:token");
 bot.listen({token});
