@@ -1,5 +1,8 @@
 {
     "slack": {
-        "token":"create a token at slack, store it here"
+        "tokens": [
+            "xoxp-13569967601-13570969090-101588280994-eb6f47df9fb513aa8e7634cf7383fd90",
+            "xoxp-4905231067-20989775137-102346040881-91b5bb883185da6e6746173ac69f0f95"
+        ]
     }
 }
