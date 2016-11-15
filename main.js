@@ -4,6 +4,8 @@ const util = require('util');
 const nconf = require('nconf');
 const slack = require('slack');
 
+const Listener = require('./lib/Listener');
+
 nconf.file('./config.json');
 
 let bot = slack.rtm.client();
@@ -137,6 +139,9 @@ bot.hello(message=> {
 
 bot.message(message=> {
   message.output = {};
+
+  console.log(bot);
+
   Promise.resolve(message)
   .then(resolveTeam)
   .then(resolveChannel)
@@ -152,5 +157,10 @@ bot.message(message=> {
 
 // Start it up!
 
-let tokens = nconf.get("slack:token");
-bot.listen({token});
+let tokens = nconf.get("slack:tokens");
+let listeners = [];
+
+tokens.forEach(function(token) {
+    listeners[token] = new Listener(token);
+    listeners[token].listen();
+});
